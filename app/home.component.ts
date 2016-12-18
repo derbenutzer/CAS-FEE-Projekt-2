@@ -8,9 +8,9 @@ import {ForumService} from "./forum.service";
   template: `
     <h2>{{title}}</h2>
     <div class="grid grid-pad">
-      <a *ngFor="let forum of forums"  [routerLink]="['/detail', forum.id]"  class="linkToForum">
+      <a *ngFor="let forum of forums"  [routerLink]="['/detail', forum._id]"  class="linkToForum">
       <div class="module forum">
-          <h4>{{forum.name}}</h4>
+          <h4>{{forum.title}}</h4>
         </div>
       </a>
     </div>
@@ -30,6 +30,5 @@ export class HomeComponent implements OnInit {
     console.log("onInit Home");
     this.forumService.getForums()
       .then(forums => this.forums = forums);
-    //.then(forums => this.forums = forums.slice(1, 5));
   }
 }
