@@ -81,11 +81,13 @@ export class CreateForumComponent {
   }
 
   updateNewForum(id: string): Promise<Forum> {
+
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     console.log("id: "+ id);
     this.id = id;
     const url = `${this.apiUrl}/${id}`;
+
     return this.http.put(url,{"title":this.title,"owner":this.owner, "categories":this.categories},options)
       .toPromise()
       .then(response => response.json())
