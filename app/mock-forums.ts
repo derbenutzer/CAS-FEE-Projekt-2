@@ -1,3 +1,4 @@
+/*
 import { Forum } from './forum';
 import {ForumOwner} from "./forum-owner";
 
@@ -15,4 +16,5 @@ export const FORUMS: Forum[] = [
   {id: 19, name: 'Magma',owner:testOwner,location: "zurich",category:"test"},
   {id: 20, name: 'Tornado',owner:testOwner,location: "st.gallen",category:"test"}
 ];
+*/
 

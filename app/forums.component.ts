@@ -38,9 +38,9 @@ export class ForumsComponent implements OnInit {
     this.selectedForum = forum;
   }
 
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedForum.id]);
-  }
+  // gotoDetail(): void {
+  //   this.router.navigate(['/detail', this.selectedForum.id]);
+  // }
 
 }
 

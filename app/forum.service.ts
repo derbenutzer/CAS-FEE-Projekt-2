@@ -31,8 +31,8 @@ export class ForumService {
 
   saveForum(forum: Forum): void {
     console.log("saved Forum");
-    console.log(forum.name);
-    console.log(forum.id);
+    //console.log(forum.name);
+    //console.log(forum.id);
   }
 
   private handleError(error: any): Promise<any> {
