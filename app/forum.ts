@@ -1,9 +1,14 @@
 //import {ForumOwner} from "./forum-owner";
 
 export class Forum {
+
+  _id:string;
+  __v:number;
+  createDate:string;
+
   constructor(
-    public title: string,
-    public owner: string,
-    public categories?: string[]
+    title: string,
+    owner: string,
+    categories: string[]
   ) {  }
 }

@@ -12,13 +12,13 @@ import { ForumService } from './forum.service';
   selector: 'my-forum-detail',
   template: `
     <div *ngIf="forum">
-      <h2>{{forum.name}}</h2>
+      <h2>{{forum.title}}</h2>
       <div>
         <label>Id: </label><span>{{forum.id}}</span></div>
       <div>
-        <label>Owner: </label><span>{{forum.owner.getName()}}</span></div>
+        <label>Owner: </label><span>{{forum.owner}}</span></div>
       <div>
-        <label>Category: </label><span>{{forum.category}}</span></div>
+        <label>Category: </label><span>{{forum.categories}}</span></div>
       <div>
         <label>Location: </label><span>{{forum.location}}</span></div>
       <button (click)="goBack()">Back</button>
@@ -30,7 +30,7 @@ export class ForumDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.forumService.getForum(+params['id']))
+      .switchMap((params: Params) => this.forumService.getForum(params['id']))
       .subscribe(forum => this.forum = forum);
   }
 
