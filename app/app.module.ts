@@ -10,6 +10,7 @@ import {CreateForumComponent} from "./create-forum.component";
 import {ForumService} from "./forum.service";
 import {ForumDetailComponent} from "./forum-detail.component";
 import {ForumsComponent} from "./forums.component";
+import {AuthService} from "./auth.service";
 
 @NgModule({
   imports: [
@@ -25,7 +26,7 @@ import {ForumsComponent} from "./forums.component";
     ForumDetailComponent,
     ForumsComponent
   ],
-  providers: [ ForumService ],
+  providers: [ ForumService, AuthService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

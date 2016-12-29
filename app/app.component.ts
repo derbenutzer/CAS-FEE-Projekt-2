@@ -1,22 +1,37 @@
 import { Component } from '@angular/core';
+import {AuthService} from "./auth.service";
 
 @Component({
   selector: 'my-app',
   template: `
+<div class="container">
     <h1>{{title}}</h1>
     <nav>
-      <a routerLink="/home">Startseite</a>
-      <a routerLink="/create-forum">Forum erstellen</a>
+      <ul class="nav">
+        <li>
+          <a routerLink="/home">Startseite</a>
+        </li>
+        <li>
+          <a routerLink="/create-forum">Forum erstellen</a>
+        </li>
+      </ul>
+      <ul class="nav login">
+        <li>
+          <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
+        </li>
+        <li>
+          <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
+        </li>
+      </ul>
     </nav>
+    </div>
     <router-outlet></router-outlet>
   `,
   styles:[`
-
     nav {
       margin-top: 3rem;
       margin-bottom: 4rem;
     }
-    
     nav a {
       font-size: 2rem;
       text-decoration: none;
@@ -27,6 +42,7 @@ import { Component } from '@angular/core';
     nav a:hover {
       background-color: lightslategrey;
       color: white;
+      cursor:pointer;
     }
   `]
 })
@@ -34,5 +50,7 @@ import { Component } from '@angular/core';
 export class AppComponent  {
 
   title = 'FEE - Project 2';
+
+  constructor(private authService: AuthService) {};
 
 }
