@@ -4,28 +4,28 @@ import {AuthService} from "./auth.service";
 @Component({
   selector: 'my-app',
   template: `
-<div class="container">
-    <h1>{{title}}</h1>
-    <nav>
-      <ul class="nav">
-        <li>
-          <a routerLink="/home">Startseite</a>
-        </li>
-        <li>
-          <a routerLink="/create-forum">Forum erstellen</a>
-        </li>
-      </ul>
-      <ul class="nav login">
-        <li>
-          <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
-        </li>
-        <li>
-          <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="container">
+        <h1>{{title}}</h1>
+        <nav>
+          <ul class="nav">
+            <li>
+              <a routerLink="/home">Startseite</a>
+            </li>
+            <li>
+              <a routerLink="/create-forum">Forum erstellen</a>
+            </li>
+          </ul>
+          <ul class="nav login">
+            <li>
+              <a (click)=authService.login() *ngIf="!authService.loggedIn()">Log In</a>
+            </li>
+            <li>
+              <a (click)=authService.logout() *ngIf="authService.loggedIn()">Log Out</a>
+            </li>
+          </ul>
+        </nav>
+        <router-outlet></router-outlet>
     </div>
-    <router-outlet></router-outlet>
   `,
   styles:[`
     nav {
